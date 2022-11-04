@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.eyesContainer {
+    display: grid;
+    place-items: center;
+    min-height: 100%;
+    position: relative;
+    height: 100vh;
+}
+
+#eyes, #eyes .eye {
+    position: absolute;
+}
+
+.eye {
+    width: 50px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.eye:first-of-type {
+    top: -79px;
+    right: 31px;
+}
+
+.eye:last-of-type {
+    top: -80px;
+    right: -79px;
+}
+
+.angle {
+    width: 15px;
+    height: 15px;
+    background-color: #000;
+    border-radius: 50%;
+}
