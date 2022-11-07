@@ -124,6 +124,7 @@ img#anchor {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
+    margin-bottom: 25px;
 }
 
 .aboutText {
@@ -173,6 +174,11 @@ img#anchor {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+}
+
+.hideHomer {
+    transition: transform 1s ease-in-out;
+    transform: translateX(-200%);
 }
 
 

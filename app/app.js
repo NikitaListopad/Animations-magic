@@ -17,7 +17,7 @@ const contactButtonText = 'Contact us';
     hiddenElements.forEach((el) => observer.observe(el))
 } ());
 
-document.addEventListener('mousemove', (e) => {
+function getMousePosition(e) {
     const mouseX = e.clientX;
     const mouseY = e.clientY;
 
@@ -27,6 +27,13 @@ document.addEventListener('mousemove', (e) => {
     const anchorY = rekt.top + rekt.height / 2;
 
     const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
+
+    return {angleDeg, anchor}
+}
+
+document.addEventListener('mousemove', (e) => {
+
+    const {angleDeg, anchor} = getMousePosition(e)
 
     const eyes = document.querySelectorAll('.eye');
 
@@ -56,3 +63,18 @@ function angle(cx, cy, ex, ey) {
     aboutTextTag.textContent = aboutText;
     contactButton.textContent = contactButtonText;
 } ())
+
+function hideHomer() {
+    const homerContainer = document.querySelector('.eyesContainer');
+    homerContainer.classList.add('hideHomer')
+}
+
+function showHomer() {
+    const homerContainer = document.querySelector('.eyesContainer');
+    setTimeout(() => {
+        homerContainer.classList.remove('hideHomer')
+        homerContainer.style = ''
+    }, 1000)
+    homerContainer.style.transform = `translateX(0)`
+
+}
