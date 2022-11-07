@@ -1,3 +1,22 @@
+const aboutText = 'Hello Shop  is the buying and selling of goods and services, or the transmitting of funds or data, over an electronic network, primarily the internet.';
+const aboutTitle = 'Welcome to Hello World Shop';
+const contactButtonText = 'Contact us';
+
+(function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show')
+            } else {
+                entry.target.classList.remove('show')
+            }
+        })
+    })
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el))
+} ());
+
 document.addEventListener('mousemove', (e) => {
     const mouseX = e.clientX;
     const mouseY = e.clientY;
@@ -25,3 +44,15 @@ function angle(cx, cy, ex, ey) {
     const rad = Math.atan2(dy,dx);
     return rad * 180 / Math.PI;
 }
+
+(function () {
+    const aboutTitleTag = document.querySelector('.aboutTitle');
+    const aboutTextTag = document.querySelector('.aboutText');
+    const contactButton = document.querySelector('.contact');
+
+    const titleArray = aboutTitle.split(' ');
+    aboutTitleTag.innerHTML = `${titleArray.slice(0, 2).join(' ')} </br> <b>${titleArray.slice(2).join(' ')}</b>`
+
+    aboutTextTag.textContent = aboutText;
+    contactButton.textContent = contactButtonText;
+} ())
