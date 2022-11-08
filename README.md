@@ -1,1 +1,2 @@
-<p align="center" color="#0044FCFF">Hey, here is some trips which I tried with native css animations + javascript.</p>
+<h3 align="center">Hey, here is some trips which I tried with native css animations + javascript.</h3>
+<p align="center"><img src="https://github.com/NikitaListopad/Animations-magic/blob/master/images/homer.jpeg?raw=true"></p>
